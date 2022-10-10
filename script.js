@@ -17,17 +17,17 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         return "Tie";
     }
-    if (playerSelection == "rock" && computerSelection == "paper") {
+    if ((playerSelection == "rock" || playerSelection == "rocks") && computerSelection == "paper") {
         return "Computer wins! 👀";
-    } else if (playerSelection == "rock" && computerSelection == "scissors") {
+    } else if ((playerSelection == "rock" || playerSelection == "rocks") && computerSelection == "scissors") {
         return "Player wins! 💪";
-    } else if (playerSelection == "paper" && computerSelection == "rock") {
+    } else if ((playerSelection == "paper" || playerSelection == "papers") && computerSelection == "rock") {
         return "Player wins! 💪";
-    } else if (playerSelection == "paper" && computerSelection == "scissors") {
+    } else if ((playerSelection == "paper" || playerSelection == "rocks") && computerSelection == "scissors") {
         return "Computer wins! 👀";
-    } else if (playerSelection == "scissors" && computerSelection == "rock") {
+    } else if ((playerSelection == "scissors" || playerSelection == "scissor") && computerSelection == "rock") {
         return "Computer wins! 👀";
-    } else if (playerSelection == "scissors" && computerSelection == "paper") {
+    } else if ((playerSelection == "scissors" || playerSelection == "scissor") && computerSelection == "paper") {
         return "Player wins! 💪";
     }
 }
@@ -39,7 +39,7 @@ function game() {
     alert("🚨 Rules: Please write 'Rock', 'Paper' or 'Scissors'. The computer will do the same. \n\nThe result will be defined by:\n- Rock beats Scissors.\n- Paper beats Rock.\n- Scissors beats Paper.\n\nLet's play 5 rounds!")
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("🕹 Please, enter 'Rock', 'Paper', or 'Scissors':");
-        while(!(playerSelection.toLowerCase().trim() == "rock" || playerSelection.toLowerCase().trim() == "paper" || playerSelection.toLowerCase().trim() == "scissors")) {
+        while(!(playerSelection.toLowerCase().trim() == "rock" || playerSelection.toLowerCase().trim() == "paper" || playerSelection.toLowerCase().trim() == "scissors" || playerSelection.toLowerCase().trim() == "scissor" || playerSelection.toLowerCase().trim() == "papers" || playerSelection.toLowerCase().trim() == "rocks")) {
             playerSelection = prompt("🔴 PLEASE ENTER A VALID VALUE.\n\nPlease, enter 'Rock', 'Paper', or 'Scissors':");
         }
         let computerSelection = computerPlay();
