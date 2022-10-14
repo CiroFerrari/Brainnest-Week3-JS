@@ -28,7 +28,7 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         return "Tie";
     }
-    if ((playerSelection == "rock" || playerSelection == "rocks") && computerSelection == "paper") {
+    if (playerSelection == "rock" && computerSelection == "paper") {
         return "Computer wins! 👀";
     } else if (playerSelection == "rock" && computerSelection == "scissors") {
         return "Player wins! 💪";
