@@ -53,8 +53,8 @@ function game() {
         while(!(playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors" || playerSelection == "scissor" || playerSelection == "papers" || playerSelection == "rocks")) {
             playerSelection = prompt("🔴 PLEASE ENTER A VALID VALUE.\n\nPlease, enter 'Rock', 'Paper', or 'Scissors':").toLowerCase().trim();
         }
-        let computerSelection = computerPlay().toLowerCase();
-        let thisRoundResult = playRound(playerSelection, computerSelection);
+        let computerSelection = computerPlay();
+        let thisRoundResult = playRound(playerSelection, computerSelection.toLowerCase());
         if(thisRoundResult.startsWith("Player wins")) {
             playerTotal++;
         } else if(thisRoundResult.startsWith("Computer wins")) {
